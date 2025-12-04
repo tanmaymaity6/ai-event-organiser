@@ -1,4 +1,4 @@
-import { ClerkProvider } from "@clerk/nextjs";
+import { ClerkProvider, SignedIn, SignedOut} from "@clerk/nextjs";
 import Header from "@/components/header";
 import "./globals.css";
 import { dark } from "@clerk/themes";
@@ -25,7 +25,15 @@ export default function RootLayout({ children }) {
         >
           <ClerkProvider appearance={{ baseTheme: dark }}>
             <ConvexClientProvider>
-            <SyncUser />
+            <SignedIn>
+                <SyncUser />
+              </SignedIn>
+
+              {/* Optional: redirect when signed out */}
+              <SignedOut>
+                {/* no sync */}
+              </SignedOut>
+
               <Header />
 
               <main className="relative min-h-screen container mx-auto pt-40 md:pt-32">
