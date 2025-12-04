@@ -71,9 +71,45 @@ Create, manage, explore, and register for events with ease — powered by AI-ass
 - Free users can create **1 event**
 - Pro users can:
   - Create unlimited events
-  - Use all t
+  - Use all theme colors
+  - Unlock more AI features
 
+---
 
+### 🗂️ Pages Included
+
+| Page | Description |
+|------|-------------|
+| Landing Page | Modern hero + search |
+| Explore Page | Search events by location & category |
+| Create Event | Full form with AI auto-fill |
+| Event Details | Full event info page |
+| Registration | Ticket booking |
+| My Tickets | All purchased tickets |
+| My Events | All events created by user |
+| Dashboard | Event overview & check-in |
+| Onboarding | User profile setup |
+
+---
+
+## 🛠️ Tech Stack
+
+### Frontend
+- **Next.js 16**
+- **React**
+- **TailwindCSS**
+- **Shadcn UI**
+- **Lucide Icons**
+
+### Backend
+- **Convex** (database + functions)
+- **Clerk Authentication**
+- **Gemini AI**
+- **Unsplash API**
+
+---
+
+## 📁 Project Structure
 ai-event-organiser/
 │── app/
 │── components/
