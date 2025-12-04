@@ -23,13 +23,16 @@ export const createEvent = mutation({
     ticketPrice: v.optional(v.number()),
     coverImage: v.optional(v.string()),
     themeColor: v.optional(v.string()),
-    hasPro: v.optional(v.boolean()),
+    // hasPro: v.optional(v.string())
   },
   handler: async (ctx, args) => {
     try {
       const user = await ctx.runQuery(internal.users.getCurrentUser);
-
+      delete args.hasPro;
       // SERVER-SIDE CHECK: Verify event limit for Free users
+       // Determine subscription
+      const hasPro = user.hasPro ?? false;
+      // Free-user event limit
       if (!hasPro && user.freeEventsCreated >= 1) {
         throw new Error(
           "Free event limit reached. Please upgrade to Pro to create more events."

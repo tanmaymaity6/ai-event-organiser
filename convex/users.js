@@ -89,7 +89,7 @@ export const completeOnboarding = mutation({
     interests: v.array(v.string()), // Min 3 categories
   },
   handler: async (ctx, args) => {
-    const user = await ctx.runQuery("users.getCurrentUser", {});
+    const user = await ctx.runQuery("users:getCurrentUser", {});
 
     await ctx.db.patch(user._id, {
       location: args.location,
